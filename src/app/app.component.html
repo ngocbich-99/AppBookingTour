@@ -1,0 +1,41 @@
+<ion-app>
+  <ion-menu side="start">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>
+          AppBooking
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-item style="padding: 20px 0;">
+        <ion-avatar style="margin-right: 10px; width: 50px; height: 50px;" slot="start">
+          <img src="https://cdn4.iconfinder.com/data/icons/user-people-2/48/5-512.png">
+        </ion-avatar>
+        <ion-label style="font-size:14px;"> <b>Tài khoản:</b>  {{accountUser}}</ion-label>
+      </ion-item>
+      <ion-list>
+        <ion-menu-toggle>
+          <ion-item lines="none" routerLink="/discover-places">
+            <ion-icon color="primary" name="business" slot="start"></ion-icon>
+            <ion-label>Địa điểm du lịch</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item lines="none" routerLink="/bookings">
+            <ion-icon color="primary" name="checkbox-outline" slot="start"></ion-icon>
+            <ion-label>Tour của bạn</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item lines="none" (click)="onLogout()" button>
+            <ion-icon color="primary" name="exit" slot="start"></ion-icon>
+            <ion-label>Đăng xuất</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet main></ion-router-outlet>
+</ion-app>

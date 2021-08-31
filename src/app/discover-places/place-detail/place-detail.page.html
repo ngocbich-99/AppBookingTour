@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/discover-places" text=''></ion-back-button>
+    </ion-buttons>
+    <ion-title>Thông tin Tour</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-text-center" *ngIf="isLoading">
+    <ion-spinner color="primary"></ion-spinner>
+  </div>
+  <ion-grid class="ion-no-padding" *ngIf="!isLoading">
+    <ion-row>
+      <ion-card>
+        <ion-col size-sm="6" offset-sm="3" class="ion-no-padding">
+          <ion-img [src]="place.imageUrl"></ion-img>
+        </ion-col>
+
+        <ion-card-content>
+          {{place.title}}
+        </ion-card-content>
+      </ion-card>
+      
+    </ion-row>
+    <ion-row class="price">
+      <ion-col>
+        <p> 
+          <ion-icon name="wallet"></ion-icon> 
+          Giá: {{place.price * 1000000 | currency: 'VND'}} / TOUR
+        </p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="date">
+      <ion-col>
+        <p>
+          <ion-icon name="calendar-number"></ion-icon>
+          {{place.availableFrom | date: 'dd/MM/yyyy' }} - {{place.availableTo | date: 'dd/MM/yyyy'}}
+        </p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="description">
+      <ion-col size-sm="6" offset-sm="3" padding>
+        <p>{{ place.description }}</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-footer>
+  <ion-row class="btn-book">
+    <ion-col size-sm="6" offset-sm="3" class="ion-text-center">
+      <ion-button expand="block" color="primary" margin (click)="onBookPlace()">
+        Đặt tour
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-footer>

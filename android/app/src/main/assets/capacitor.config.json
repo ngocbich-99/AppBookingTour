@@ -1,0 +1,6 @@
+{
+  "appId": "com.ngocbich.appbooking",
+  "appName": "app-booking",
+  "bundledWebRuntime": false,
+  "webDir": "www"
+}

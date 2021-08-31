@@ -1,0 +1,26 @@
+ion-col,
+ion-grid {
+  padding: 0;
+}
+ion-grid {
+  padding-top: 10px;
+}
+.item-booking {
+  h2 {
+    margin-bottom: 5px;
+  }
+  ion-icon {
+    font-size: 18px;
+    color: #3171e0;
+    padding-right: 10px;
+  }
+  p {
+    display: flex;
+    align-items: center;
+  }
+}
+.img-booking {
+  margin-right: 10px;
+  width: 70px;
+  height: 70px;
+}
